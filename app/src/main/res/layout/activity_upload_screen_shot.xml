@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activities.ui.home.UploadProject.UploadedProject">
+    tools:context=".Activities.ui.home.UploadProject.UploadScreenShot">
 
     <include
         android:id="@+id/actionbar"
@@ -13,10 +13,10 @@
         android:layout_height="wrap_content"
         layout="@layout/customactionbar"/>
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"/>
 
 </LinearLayout>

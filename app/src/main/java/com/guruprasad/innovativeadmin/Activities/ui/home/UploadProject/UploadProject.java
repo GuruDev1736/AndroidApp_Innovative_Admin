@@ -13,6 +13,7 @@ import android.provider.MediaStore;
 import android.provider.SyncStateContract;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 
 import com.bumptech.glide.Glide;
@@ -45,6 +46,15 @@ public class UploadProject extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityUploadProjectBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        binding.actionbar.back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
 
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(UploadProject.this,R.array.category, android.R.layout.simple_spinner_item);
@@ -128,7 +138,7 @@ public class UploadProject extends AppCompatActivity {
             materialdailog("Error","Please mention the price of the project");
             return;
         }
-        if (category.isEmpty() || category.equals(" "))
+        if (category.equals("Select"))
         {
             materialdailog("Error","Select the category for the project");
             return;
