@@ -67,7 +67,6 @@ public class UploadProject extends AppCompatActivity {
                 UniquesIDGenerator generator = new UniquesIDGenerator();
                 UUID id =  generator.generateUniqueId();
                 binding.etReferenceId.setText(id.toString());
-                binding.generatedid.setVisibility(View.GONE);
 
             }
         });

@@ -102,12 +102,12 @@ public class UploadProjectModel {
         this.category = category;
     }
 
-    public String getImag1() {
+    public String getImg1() {
         return img1;
     }
 
-    public void setImag1(String imag1) {
-        this.img1 = imag1;
+    public void setImg1(String img1) {
+        this.img1 = img1;
     }
 
     public String getImg2() {
