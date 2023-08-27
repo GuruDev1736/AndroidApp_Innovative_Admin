@@ -26,6 +26,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.guruprasad.innovativeadmin.Activities.HomeActivity;
+import com.guruprasad.innovativeadmin.Activities.ui.home.SessionActivity;
 import com.guruprasad.innovativeadmin.Constants.Constants;
 import com.guruprasad.innovativeadmin.Constants.UniquesIDGenerator;
 import com.guruprasad.innovativeadmin.Model.UploadProjectModel;
@@ -52,6 +54,14 @@ public class UploadProject extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 onBackPressed();
+            }
+        });
+
+        binding.actionbar.activityName.setText("Upload Project");
+        binding.actionbar.home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(UploadProject.this, HomeActivity.class));
             }
         });
 

@@ -27,6 +27,9 @@
         android:theme="@style/Theme.InnovativeAdmin"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.ui.home.UploadProject.EditProjectActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.ui.home.UploadProject.Screenshot"
             android:exported="false" />
         <activity
@@ -45,6 +48,7 @@
             android:name=".Activities.HomeActivity"
             android:exported="false"
             android:label="@string/title_activity_home"
+            android:noHistory="true"
             android:theme="@style/Theme.InnovativeAdmin.NoActionBar" />
         <activity
             android:name=".Authenthication.LoginActivity"

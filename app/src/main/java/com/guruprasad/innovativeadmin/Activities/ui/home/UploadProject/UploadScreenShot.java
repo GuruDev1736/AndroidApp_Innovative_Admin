@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -12,6 +13,8 @@ import android.view.WindowManager;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.guruprasad.innovativeadmin.Activities.HomeActivity;
+import com.guruprasad.innovativeadmin.Activities.ui.home.SessionActivity;
 import com.guruprasad.innovativeadmin.Adapters.UploadScreenShotAdapter;
 import com.guruprasad.innovativeadmin.Adapters.UploadedProjectAdapter;
 import com.guruprasad.innovativeadmin.Constants.Constants;
@@ -36,6 +39,13 @@ public class UploadScreenShot extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 onBackPressed();
+            }
+        });
+        binding.actionbar.activityName.setText("Upload Screenshot");
+        binding.actionbar.home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(UploadScreenShot.this, HomeActivity.class));
             }
         });
 

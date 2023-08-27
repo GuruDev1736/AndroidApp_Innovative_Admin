@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.textview.MaterialTextView;
+import com.guruprasad.innovativeadmin.Activities.logoDailog;
 import com.guruprasad.innovativeadmin.Constants.Constants;
 import com.guruprasad.innovativeadmin.Model.UploadProjectModel;
 import com.guruprasad.innovativeadmin.R;
@@ -37,6 +38,16 @@ public class UploadedProjectAdapter extends FirebaseRecyclerAdapter<UploadProjec
         {
             Constants.error(holder.itemView.getContext(),"Doesn't find any thing");
         }
+
+        holder.logo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                logoDailog logoDailog = new logoDailog(holder.itemView.getContext());
+                logoDailog.setImageView(model.getLogourl());
+                logoDailog.show();
+            }
+        });
+
 
 
 

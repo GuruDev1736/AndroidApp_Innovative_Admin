@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -12,6 +13,8 @@ import android.view.WindowManager;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.guruprasad.innovativeadmin.Activities.HomeActivity;
+import com.guruprasad.innovativeadmin.Activities.ui.home.SessionActivity;
 import com.guruprasad.innovativeadmin.Adapters.UploadedProjectAdapter;
 import com.guruprasad.innovativeadmin.Constants.Constants;
 import com.guruprasad.innovativeadmin.Model.UploadProjectModel;
@@ -34,6 +37,14 @@ public class UploadedProject extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 onBackPressed();
+            }
+        });
+
+        binding.actionbar.activityName.setText("Uploaded Project");
+        binding.actionbar.home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(UploadedProject.this, HomeActivity.class));
             }
         });
 

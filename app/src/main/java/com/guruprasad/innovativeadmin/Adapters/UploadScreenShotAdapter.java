@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.textview.MaterialTextView;
+import com.guruprasad.innovativeadmin.Activities.logoDailog;
 import com.guruprasad.innovativeadmin.Activities.ui.home.UploadProject.Screenshot;
 import com.guruprasad.innovativeadmin.Activities.ui.home.UploadProject.UploadScreenShot;
 import com.guruprasad.innovativeadmin.Constants.Constants;
@@ -51,6 +52,15 @@ public class UploadScreenShotAdapter extends FirebaseRecyclerAdapter<UploadProje
                         .putExtra("reference",model.getProjecId())
                         .putExtra("category",model.getCategory())
                 );
+            }
+        });
+
+        holder.logo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                logoDailog logoDailog = new logoDailog(holder.itemView.getContext());
+                logoDailog.setImageView(model.getLogourl());
+                logoDailog.show();
             }
         });
 
