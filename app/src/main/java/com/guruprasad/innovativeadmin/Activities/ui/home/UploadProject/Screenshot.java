@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.system.Os;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -33,6 +34,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.guruprasad.innovativeadmin.Activities.HomeActivity;
 import com.guruprasad.innovativeadmin.Constants.Constants;
 import com.guruprasad.innovativeadmin.Model.UploadProjectModel;
 import com.guruprasad.innovativeadmin.R;
@@ -70,6 +72,16 @@ public class Screenshot extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+        binding.actionbar.home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Screenshot.this, HomeActivity.class));
+            }
+        });
+
+        binding.actionbar.activityName.setText("ScreenShot");
+
 
         Intent intent = getIntent();
        String title = intent.getStringExtra("title");

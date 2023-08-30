@@ -52,9 +52,27 @@
                         android:layout_alignTop="@+id/logo"
                         android:layout_alignEnd="@+id/logo"
                         android:layout_alignBottom="@+id/logo"
-                        android:visibility="invisible"
-                        android:layout_margin="20dp"
-                        />
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:visibility="invisible" />
+
+                    <ImageButton
+                        android:id="@+id/uploadlogo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignEnd="@+id/logo"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginBottom="86dp"
+                        android:background="@drawable/customimagebutton"
+                        android:padding="5dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:src="@drawable/outline_cloud_upload_24" />
 
                 </RelativeLayout>
             </LinearLayout>
@@ -99,6 +117,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Reference Id"
+                        android:layout_marginTop="10dp"
                         app:boxStrokeColor="@color/primary"
                         app:hintTextColor="@color/primary"
                         app:boxStrokeErrorColor="@color/red"

@@ -9,6 +9,7 @@ import android.view.WindowManager;
 
 import com.guruprasad.innovativeadmin.Activities.HomeActivity;
 import com.guruprasad.innovativeadmin.Activities.ui.home.UploadProject.EditProjectActivity;
+import com.guruprasad.innovativeadmin.Activities.ui.home.UploadProject.EditProjectList;
 import com.guruprasad.innovativeadmin.Activities.ui.home.UploadProject.UploadProject;
 import com.guruprasad.innovativeadmin.Activities.ui.home.UploadProject.UploadScreenShot;
 import com.guruprasad.innovativeadmin.Activities.ui.home.UploadProject.UploadedProject;
@@ -25,15 +26,17 @@ public class SessionActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        binding.actionbar.back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+
 
         binding.actionbar.activityName.setText("Upload Project");
         binding.actionbar.home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SessionActivity.this, HomeActivity.class));
+            }
+        });
+
+        binding.actionbar.back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(SessionActivity.this, HomeActivity.class));
@@ -67,15 +70,8 @@ public class SessionActivity extends AppCompatActivity {
         binding.editProject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SessionActivity.this, EditProjectActivity.class));
+                startActivity(new Intent(SessionActivity.this, EditProjectList.class));
             }
         });
-
-
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
     }
 }
